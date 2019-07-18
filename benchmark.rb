@@ -30,7 +30,7 @@ def ordered_map_delete(map)
   end
 end
 
-def ordered_map_insert_before(map)
+def ordered_map_insert_after(map)
   TIMES.times do |k|
     map.insert_after(k, MAX+k, MAX+k)
   end
@@ -67,7 +67,7 @@ Benchmark.bm 30 do |r|
     ordered_map_delete(map2)
   end
 
-  r.report 'ordered_map_insert_before' do
-    ordered_map_insert_before(map3)
+  r.report 'ordered_map_insert_after' do
+    ordered_map_insert_after(map3)
   end
 end
